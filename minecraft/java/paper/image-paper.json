@@ -14,7 +14,8 @@
     "features": [
       "eula",
       "auto-complete",
-      "players"
+      "players",
+      "worlds"
     ],
     "stop": "stop"
   },
