@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "version": "AL_V1"
+  },
+  "name": "Nodejs",
+  "description": "Anyone got chatgpt?",
+  "author": "harumi@harumi.io.vn",
+  "authorName": "harumi",
+  "docker_images": [
+    {"Nodejs 23": "ghcr.io/airlinklabs/node:23"}
+  ],
+  "startup": "if [[ ! -z $ALVKT(NODE_PACKAGES) ]]; then /usr/local/bin/npm install $ALVKT(NODE_PACKAGES); fi; if [[ ! -z $ALVKT(UNNODE_PACKAGES) ]]; then /usr/local/bin/npm uninstall $ALVKT(UNNODE_PACKAGES); fi; if [[ '$ALVKT(JS_FILE)' == '*.js' ]]; then /usr/local/bin/node '/home/container/$ALVKT(JS_FILE)' $ALVKT(NODE_ARGS); else /usr/local/bin/npx --yes tsx '/home/container/$ALVKT(JS_FILE)' $ALVKT(NODE_ARGS); fi",
+  "info": {
+    "features": [],
+    "stop": "^C"
+  },
+  "scripts": {
+    "install": []
+  },
+  "variables": [
+    {
+      "env": "NODE_PACKAGES",
+      "value": "",
+      "type": "text",
+      "name": "Aditional nodejs packages (seperate by space)",
+      "required": false
+    },
+    {
+      "env": "UNNODE_PACKAGES",
+      "value": "",
+      "type": "text",
+      "name": "Delete Packages (seperate by space)",
+      "required": false
+    },
+    {
+      "env": "JS_FILE",
+      "value": "index.js",
+      "type": "text",
+      "name": "Startup file",
+      "required": true
+    },
+    {
+     "env": "NODE_ARGS",
+     "value": "",
+     "type": "text",
+     "name": "Additional Arguments",
+     "required": false
+    }
+  ]
+}
