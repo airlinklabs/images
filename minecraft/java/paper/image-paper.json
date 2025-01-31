@@ -17,7 +17,11 @@
       "players",
       "worlds"
     ],
-    "stop": "stop"
+    "stop": "stop",
+    "startup_line": {
+      "regex": "^Done \\(\\d+\\.\\d{3}s\\)! For help, type \"help\"$",
+      "with": "\u001b[33mDone server started successfully in \u001b[37m(\\d+\\.\\d{3}s)\u001b[33m! For help, type help\u001b[0m"
+    }
   },
   "scripts": {
     "install": [
