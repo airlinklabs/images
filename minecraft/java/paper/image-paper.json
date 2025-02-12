@@ -27,10 +27,12 @@
     "install": [
       {
         "url": "https://api.papermc.io/v2/projects/paper/versions/$ALVKT(VERSION)/builds/$ALVKT(BUILD)/downloads/paper-$ALVKT(VERSION)-$ALVKT(BUILD).jar",
+        "onStart": false,
         "fileName": "server.jar"
       },
       {
         "url": "https://raw.githubusercontent.com/airlinklabs/images/refs/heads/main/minecraft/java/server.properties",
+        "onStart": true,
         "fileName": "server.properties"
       }
     ]
