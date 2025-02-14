@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "version": "AL_V1"
+  },
+  "name": "Generic: Node JS",
+  "description": "This is a generic node.js server image.",
+  "author": "privt@airlinklabs.xyz",
+  "authorName": "AirLink Labs",
+  "docker_images": [
+    {"Node 21": "ghcr.io/airlinklabs/node:21"}
+  ],
+  "startup": "bash",
+  "info": {
+    "features": [
+    ]
+  },
+  "scripts": {
+    "native": {
+      "CMD": "cd /app/data && mkdir testfolderbcz",
+      "container": "ghcr.io/airlinklabs/installers:debian"
+    }
+  }
+}
