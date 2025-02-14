@@ -15,9 +15,13 @@
     ]
   },
   "scripts": {
+    "install": [
+    ],
     "native": {
       "CMD": "cd /app/data && mkdir testfolderbcz",
       "container": "ghcr.io/airlinklabs/installers:debian"
     }
-  }
+  },
+  "variables": [
+  ]
 }
