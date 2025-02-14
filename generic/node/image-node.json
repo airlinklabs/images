@@ -18,7 +18,7 @@
     "install": [
     ],
     "native": {
-      "CMD": "cd /app/data && mkdir testfolderbcz",
+      "CMD":"echo 'console.log('Hello World');' > /app/data/index.js && cd /app/data && node index.js",
       "container": "ghcr.io/airlinklabs/installers:debian"
     }
   },
