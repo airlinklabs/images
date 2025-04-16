@@ -2,7 +2,7 @@
   "meta": {
     "version": "AL_V1"
   },
-  "name": "Debian VM Immage",
+  "name": "Debian VM Image",
   "description": "Debian is a popular, stable, and versatile Linux distribution. It is known for its stability, extensive package repository, and active community. Debian is often used as a base for other distributions and is the preferred choice for servers and desktop systems alike, known for its reliability and long-term support.",
   "author": "airlink@airlinklabs.xyz",
   "authorName": "AirLink Labs",
