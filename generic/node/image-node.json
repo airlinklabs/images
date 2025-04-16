@@ -4,7 +4,7 @@
   },
   "name": "Generic: Node JS",
   "description": "This is a generic node.js server image.",
-  "author": "privt@airlinklabs.xyz",
+  "author": "airlink@airlinklabs.xyz",
   "authorName": "AirLink Labs",
   "docker_images": [
     {"Node 21": "ghcr.io/airlinklabs/node:21"}
