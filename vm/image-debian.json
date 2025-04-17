@@ -18,8 +18,12 @@
     "stop": "shutdown -h now"
   },
   "scripts": {
-    "install": []
-  },
+  "install": [],
+  "native": {
+    "CMD": "git clone https://github.com/airlinklabs/alsh.git /app/data/alsh && cd /app/data/alsh && npm i && mkdir -p /app/data/airlink && openssl rand -base64 12 > /app/data/airlink/password.txt && sleep 30",
+    "container": "ghcr.io/airlinklabs/installers:debian"
+  }
+},
   "variables": [
     {
       "env": "ALSH",
