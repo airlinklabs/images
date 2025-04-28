@@ -8,10 +8,10 @@
   "authorName": "AirLink Labs",
   "docker_images": [
     {"Java 21": "ghcr.io/airlinklabs/java:21"},
-    {"Java 21": "ghcr.io/airlinklabs/java:18"},
-    {"Java 21": "ghcr.io/airlinklabs/java:17"},
-    {"Java 21": "ghcr.io/airlinklabs/java:16"},
-    {"Java 21": "ghcr.io/airlinklabs/java:11"}
+    {"Java 18": "ghcr.io/airlinklabs/java:18"},
+    {"Java 17": "ghcr.io/airlinklabs/java:17"},
+    {"Java 16": "ghcr.io/airlinklabs/java:16"},
+    {"Java 11": "ghcr.io/airlinklabs/java:11"}
   ],
   "startup": "java -Xms128M -XX:MaxRAMPercentage=95.0 -Dterminal.jline=false -Dterminal.ansi=true -jar $ALVKT(JAR_STARTUP)",
   "info": {
