@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "version": "AL_V1"
+  },
+  "name": "Generic: Python",
+  "description": "This is a generic Python environment with Python 3.12 and common packages pre-installed. It includes development tools like pip, setuptools, virtualenv, and popular libraries such as Flask, requests, NumPy, and pandas. Suitable for any Python application from web servers to data processing scripts.",
+  "author": "airlink@airlinklabs.xyz",
+  "authorName": "AirLink Labs",
+  "docker_images": [
+    {"Python 3.12": "ghcr.io/airlinklabs/python:3.12"}
+  ],
+  "startup": "python3 $SCRIPT_PATH",
+  "info": {
+    "features": []
+  },
+  "scripts": {
+    "install": [],
+    "native": {
+      "CMD": "echo 'print(\"Hello from Python!\")' > /app/data/hello.py && echo 'import sys\\nprint(f\"Python {sys.version} ready to run your applications\")' > /app/data/main.py && cd /app/data && python3 hello.py",
+      "container": "ghcr.io/airlinklabs/installers:debian"
+    }
+  },
+  "variables": [
+    {
+      "env": "SCRIPT_PATH",
+      "value": "main.py",
+      "type": "text",
+      "name": "Python Script Path",
+      "description": "Path to the Python script to run (e.g., main.py, app.py, or your custom script)",
+      "required": true
+    },
+    {
+      "env": "PYTHON_ARGS",
+      "value": "",
+      "type": "text",
+      "name": "Python Arguments",
+      "description": "Additional arguments to pass to the Python interpreter",
+      "required": false
+    },
+    {
+      "env": "VENV_PATH",
+      "value": "",
+      "type": "text",
+      "name": "Virtual Environment Path",
+      "description": "Path to a virtual environment to activate before running (leave empty to use system Python)",
+      "required": false
+    },
+    {
+      "env": "START",
+      "value": "if [ -n \"$VENV_PATH\" ] && [ -f \"$VENV_PATH/bin/activate\" ]; then source $VENV_PATH/bin/activate; fi && python3 $PYTHON_ARGS $SCRIPT_PATH",
+      "type": "text",
+      "name": "Full Startup Command",
+      "description": "The complete command used to start your Python application",
+      "required": true
+    }
+  ]
+}
