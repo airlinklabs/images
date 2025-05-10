@@ -1,4 +1,4 @@
-FROM openjdk:21-jdk-slim
+FROM --platform=$TARGETOS/$TARGETARCH openjdk:21-jdk-slim
 
 WORKDIR /app/data
 
