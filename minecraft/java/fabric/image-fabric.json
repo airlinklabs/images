@@ -1,0 +1,89 @@
+{
+    "id": 3,
+    "UUID": "0da5a946-ac6a-4964-a050-da3d9593b77a",
+    "name": "Minecraft Java: Fabric",
+    "description": "Fabric is a modular, lightweight mod loader for Minecraft",
+    "author": "thegreenflame1507@gmail.com",
+    "authorName": "G-flame",
+    "createdAt": "2025-05-07T09:47:19.119Z",
+    "meta": {
+      "version": "AL_V1"
+    },
+    "dockerImages": [
+      {
+        "Java 21": "ghcr.io/airlinklabs/java:21"
+      },
+      {
+        "Java 18": "ghcr.io/airlinklabs/java:18"
+      },
+      {
+        "Java 17": "ghcr.io/airlinklabs/java:17"
+      },
+      {
+        "Java 16": "ghcr.io/airlinklabs/java:16"
+      },
+      {
+        "Java 11": "ghcr.io/airlinklabs/java:11"
+      }
+    ],
+    "startup": "java -Xms128m --add-modules=jdk.incubator.vector -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -jar $ALVKT(JAR_STARTUP) --nogui",
+        "info": {
+      "features": [
+        "eula",
+        "auto-complete",
+        "players",
+        "worlds"
+      ],
+      "stop": "stop",
+      "startup_line": {
+        "regex": "Done For help, type \"help\"$",
+        "with": "Done server started successfully in For help, type"
+      }
+    },
+    "scripts": {
+      "install": [
+        {
+          "url": "https://meta.fabricmc.net/v2/versions/loader/$ALVKT(VERSION)/$ALVKT(FABV)/$ALVKT(FABIV)/server/jar", 
+          "onStart": false,
+          "ALVKT": true,
+          "fileName": "server.jar"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/airlinklabs/images/refs/heads/main/minecraft/java/server.properties",
+          "onStart": true,
+          "ALVKT": true,
+          "fileName": "server.properties"
+        }
+      ]
+    },
+    "variables": [
+      {
+        "env": "JAR_STARTUP",
+        "value": "server.jar",
+        "type": "text",
+        "name": "server file name",
+        "required": true
+      },
+      {
+        "env": "VERSION",
+        "value": "1.21.7",
+        "type": "text",
+        "name": "Minecraft Version",
+        "required": true
+      },
+      {
+        "env": "FABV",
+        "value": "0.16.14",
+        "type": "text",
+        "name": "Fabric loader version",
+        "required": true
+      },
+      {
+        "env": "FABIV",
+        "value": "1.0.3",
+        "type": "text",
+        "name": "Fabric installer version",
+        "required": true
+      }
+    ]
+  }
