@@ -53,4 +53,7 @@ images/
     └── image-debian.json  # Debian VM image config
 ```
 
+### License
+[MIT license](LICENSE)
+
 
